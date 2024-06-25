@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 2px solid mediumseagreen;
+}
+th {
+    background-color: mediumseagreen;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+td {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid mediumseagreen;
+}
+tr:nth-child(odd) {
+    background-color: lightyellow;
+}
+tr:nth-child(even) {
+    background-color: lightgoldenrodyellow;
+}
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descripcion {
+    width: 60px;
+}
+h1 {
+    text-align: center;
+    color: darkslategray;
+}
