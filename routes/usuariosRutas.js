@@ -3,7 +3,7 @@ const UsuarioClase=require("../clases/UsuarioClase");
 const UsuarioBD=require("../bd/UsuariosBD");
 
 ruta.get("/",async (req,res)=>{
-     //var usuario1=new UsuarioClase();
+    
      const usuariobd=new UsuarioBD();
      const usuariosMySql=await usuariobd.mostrarUsuarios();
      var usuariosCorrectos = [];
@@ -15,7 +15,7 @@ ruta.get("/",async (req,res)=>{
         }
     });
 
-     //console.log(usuariosCorrectos);
+     
      res.render("mostrarUsuarios", {usuariosCorrectos});
 });
 
@@ -25,8 +25,8 @@ ruta.post("/agregarUsuario",(req,res)=>{
     if(usuario1.nombre!=undefined && usuario1.celular!=undefined && usuario1.correo!=undefined){
         const usuariobd = new UsuarioBD();
        usuariobd.nuevoUsuario(usuario1.mostrarDatos);
-        //console.log(usuario1.mostrarDatos);
-        res.render("inicio",usuario1.mostrarDatos);
+        
+        res.redirect("/");
     }else{
         res.render("error");
     }
@@ -47,7 +47,7 @@ ruta.get("/editarUsuario/:idUsuario",async(req,res)=>{
     } catch (error) {
         
     }
-    //res.end();
+    
 });
 ruta.post("/editarUsuario", async(req,res)=>{
    try {
