@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 class ConectarBD{
     constructor(){
         this.conexion=null;
@@ -9,11 +9,11 @@ class ConectarBD{
     async conectarMySql(){
         try {
             this.conexion = await this.mysql.createConnection({
-                host: "localhost",
-                user: "root",
-                password: "root",
-                database: "universidad",
-                port: 3306
+                host: process.env.HOSTMYSQL || "bq8dbvnjsjexya1wjk40-mysql.services.clever-cloud.com",
+                user: process.env.USERMYSQL || "um0s0tnccrngoz5j",
+                password: process.env.PASSWORDMYSQL || "LgYOU9KcYbX6L6QeV7Je",
+                database: process.env.DATABASEMYSQL || "bq8dbvnjsjexya1wjk40",
+                port: process.env.PORTMYSQL || 3306
             });
             console.log("Conectado a MySql");
             return this.conexion;
